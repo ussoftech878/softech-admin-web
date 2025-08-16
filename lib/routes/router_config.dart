@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:softech_admin/screens/EmplloyeesScreen.dart';
 import 'package:softech_admin/screens/HomeScreen.dart';
 import 'package:softech_admin/screens/NotFoundScreen.dart';
 
@@ -32,11 +33,8 @@ CustomTransitionPage buildPageWithoutTransition({
   );
 }
 
-const String carDetailsRoute = '/car-details';
-const String contactRoute = '/contact';
-const String faqsRoute = '/faqs';
 const String homeRoute = '/';
-const String howItWorksRoute = '/how-it-works';
+const String EmployeeRoute = '/employee';
 const String notFoundRoute = '/not_found';
 const String privacyPolicyRoute = '/privacy-policy';
 const String termsAndConditionsRoute = '/terms-and-conditions';
@@ -47,9 +45,18 @@ const String transactionDetailRoute = '/transactionDetail';
 // Router configuration
 final router = GoRouter(
   navigatorKey: rootNavigatorKey,
-  initialLocation: homeRoute,
+  initialLocation: EmployeeRoute,
   errorBuilder: (context, state) => const NotFoundScreen(),
   routes: [
-    GoRoute(path: homeRoute, builder: (context, state) => const Homescreen()),
+    ShellRoute(
+      navigatorKey: shellNavigatorKey,
+      builder: (context, state, child) => Homescreen(child: child),
+      routes: [
+        GoRoute(
+          path: EmployeeRoute,
+          builder: (context, state) => const Emplloyeesscreen(),
+        ),
+      ],
+    ),
   ],
 );
