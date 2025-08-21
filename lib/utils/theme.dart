@@ -5,6 +5,7 @@ class AppColors {
   static const Color primary = Color(0xFFDF3821);
   static const Color black = Color(0xFF000000);
   static const Color white = Color(0xFFFFFFFF);
+  static const Color dullwhite = Color.fromARGB(230, 255, 255, 255);
   static const Color teal = Color(0xFF0C7C59);
 }
 

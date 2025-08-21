@@ -45,13 +45,17 @@ const String transactionDetailRoute = '/transactionDetail';
 // Router configuration
 final router = GoRouter(
   navigatorKey: rootNavigatorKey,
-  initialLocation: EmployeeRoute,
+  initialLocation: homeRoute,
   errorBuilder: (context, state) => const NotFoundScreen(),
   routes: [
     ShellRoute(
       navigatorKey: shellNavigatorKey,
       builder: (context, state, child) => Homescreen(child: child),
       routes: [
+        GoRoute(
+          path: homeRoute,
+          builder: (context, state) => Emplloyeesscreen(), // default child
+        ),
         GoRoute(
           path: EmployeeRoute,
           builder: (context, state) => const Emplloyeesscreen(),

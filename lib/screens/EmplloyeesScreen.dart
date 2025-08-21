@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:softech_admin/utils/images.dart';
 import 'package:softech_admin/utils/theme.dart';
 import 'package:softech_admin/widgets/booking_header.dart';
 import 'package:softech_admin/widgets/booking_tile.dart';
@@ -10,6 +11,7 @@ class Emplloyeesscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       //
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 21.w, vertical: 30.w),
@@ -26,10 +28,8 @@ class Emplloyeesscreen extends StatelessWidget {
             Expanded(
               child: Container(
                 padding: EdgeInsets.all(30.w),
-                decoration: BoxDecoration(
-                  border: Border.all(width: 1, color: AppColors.white),
-                  borderRadius: BorderRadius.circular(10.r),
-                ),
+                height: double.infinity,
+
                 child: Column(
                   children: [
                     const BookingHeader(

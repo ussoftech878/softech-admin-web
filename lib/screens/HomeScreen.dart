@@ -1,7 +1,9 @@
+import 'dart:ui'; // Add this import for ImageFilter
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:softech_admin/routes/router_config.dart';
+import 'package:softech_admin/utils/images.dart';
 import 'package:softech_admin/utils/theme.dart';
 
 class Homescreen extends StatefulWidget {
@@ -17,144 +19,168 @@ class _HomescreenState extends State<Homescreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: Stack(
         children: [
+          // Background with blur
           Container(
-            margin: EdgeInsets.symmetric(vertical: 50.h),
-            height: 180.h,
+            height: double.infinity,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(20.r),
-                bottomRight: Radius.circular(20.r),
+              image: DecorationImage(
+                image: AssetImage(PngAssests.background),
+                fit: BoxFit.cover,
               ),
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                // Padding(
-                //   padding: EdgeInsets.only(left: 40.w),
-                //   child: InkWell(
-                //     onTap: () {
-                //       //context.replace(homeRoute);
-                //     },
-                //     child: Image.asset(
-                //       PngAssets.Applogo,
-                //       width: 160.w,
-                //     ),
-                //   ),
-                // ),
-                Row(
-                  children: [
-                    _buildNavItem(context, "Employees", EmployeeRoute),
-                    SizedBox(width: 30.w),
-                    _buildNavItem(context, 'How it Works', EmployeeRoute),
-                    SizedBox(width: 30.w),
-                    _buildNavItem(context, 'Cars', EmployeeRoute),
-                    SizedBox(width: 30.w),
-                    _buildNavItem(context, 'FAQs', EmployeeRoute),
-                    SizedBox(width: 30.w),
-                    _buildNavItem(context, 'Contact Us', EmployeeRoute),
-                  ],
-                ),
-                Padding(
-                  padding: EdgeInsets.only(right: 40.w),
-                  child: Row(
-                    children: [
-                      /* InkWell(
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              border: Border.all(
-                                                  color: Color(0xFFD1D5DB)),
-                                              color: Colors.transparent,
-                                              borderRadius:
-                                                  BorderRadius.circular(200.r),
-                                            ),
-                                            width: 110.w,
-                                            height: 40.w,
-                                            child: Padding(
-                                              padding: EdgeInsets.all(8.w),
-                                              child: Row(
-                                                children: [
-                                                  Image.asset(
-                                                    width: 25.w,
-                                                    PngAssets.Flag_of_United_States,
-                                                  ),
-                                                  SizedBox(width: 5.w),
-                                                  Text(
-                                                    "Eng",
-                                                    style: TextStyle(
-                                                      fontSize: 16.sp,
-                                                      fontWeight: FontWeight.w500,
-                                                      color: AppColors.kTextColor,
-                                                    ),
-                                                  ),
-                                                  Spacer(),
-                                                  Image.asset(PngAssets
-                                                      .keyboard_arrow_down),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ), */
-                      SizedBox(width: 20.w),
-                      // PopupMenuButton(
-                      //   child: Container(
-                      //     decoration: BoxDecoration(
-                      //       border: Border.all(
-                      //           color: Color(0xFFD1D5DB)),
-                      //       color: Colors.transparent,
-                      //       borderRadius:
-                      //           BorderRadius.circular(200.r),
-                      //     ),
-                      //     width: 110.w,
-                      //     height: 40.w,
-                      //     child: Padding(
-                      //       padding: EdgeInsets.all(8.w),
-                      //       child: Row(
-                      //         children: [
-                      //           Image.asset(
-                      //             width: 25.w,
-                      //             PngAssets.Flag_of_United_States,
-                      //           ),
-                      //           SizedBox(width: 5.w),
-                      //           Text(
-                      //             mainViewModel.getLanguage,
-                      //             style: TextStyle(
-                      //               fontSize: 16.sp,
-                      //               fontWeight: FontWeight.w500,
-                      //               color: AppColors.kTextColor,
-                      //             ),
-                      //           ),
-                      //           Spacer(),
-                      //           Image.asset(PngAssets
-                      //               .keyboard_arrow_down),
-                      //         ],
-                      //       ),
-                      //     ),
-                      //   ),
-                      //   itemBuilder: (context) => [
-                      //     PopupMenuItem(
-                      //       child: Text("English"),
-                      //       onTap: () {
-                      //         mainViewModel.setLanguage("Eng");
-                      //       },
-                      //     ),
-                      //     PopupMenuItem(
-                      //       child: Text("Norwegian"),
-                      //       onTap: () {
-                      //         mainViewModel.setLanguage("Nor");
-                      //       },
-                      //     ),
-                      //   ],
-                      // ),
-                      SizedBox(width: 20.w),
-                    ],
-                  ),
-                ),
-              ],
+          ),
+          BackdropFilter(
+            filter: ImageFilter.blur(
+              sigmaX: 5.0, // Adjust blur intensity
+              sigmaY: 5.0,
+            ),
+            child: Container(
+              color: Colors.black.withOpacity(0.1), // Adjust overlay opacity
             ),
           ),
-          Expanded(child: widget.child),
+          // Main content
+          Column(
+            children: [
+              Container(
+                margin: EdgeInsets.only(bottom: 50.h),
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                height: 250.h,
+                decoration: BoxDecoration(
+                  color: AppColors.primary,
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(20.r),
+                    bottomRight: Radius.circular(20.r),
+                  ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        //context.replace(homeRoute);
+                      },
+                      child: Image.asset(PngAssests.logo, width: 160.w),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(right: 108.w),
+                      child: Row(
+                        children: [
+                          _buildNavItem(context, "Employees", EmployeeRoute),
+                          SizedBox(width: 30.w),
+                          _buildNavItem(context, 'How it Works', EmployeeRoute),
+                          SizedBox(width: 30.w),
+                          _buildNavItem(context, 'Cars', EmployeeRoute),
+                          SizedBox(width: 30.w),
+                          _buildNavItem(context, 'FAQs', EmployeeRoute),
+                          SizedBox(width: 30.w),
+                          _buildNavItem(context, 'Contact Us', EmployeeRoute),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(right: 40.w),
+                      child: Row(
+                        children: [
+                          /* InkWell(
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                border: Border.all(
+                                                    color: Color(0xFFD1D5DB)),
+                                                color: Colors.transparent,
+                                                borderRadius:
+                                                    BorderRadius.circular(200.r),
+                                              ),
+                                              width: 110.w,
+                                              height: 40.w,
+                                              child: Padding(
+                                                padding: EdgeInsets.all(8.w),
+                                                child: Row(
+                                                  children: [
+                                                    Image.asset(
+                                                      width: 25.w,
+                                                      PngAssets.Flag_of_United_States,
+                                                    ),
+                                                    SizedBox(width: 5.w),
+                                                    Text(
+                                                      "Eng",
+                                                      style: TextStyle(
+                                                        fontSize: 16.sp,
+                                                        fontWeight: FontWeight.w500,
+                                                        color: AppColors.kTextColor,
+                                                      ),
+                                                    ),
+                                                    Spacer(),
+                                                    Image.asset(PngAssets
+                                                        .keyboard_arrow_down),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ), */
+                          SizedBox(width: 20.w),
+                          // PopupMenuButton(
+                          //   child: Container(
+                          //     decoration: BoxDecoration(
+                          //       border: Border.all(
+                          //           color: Color(0xFFD1D5DB)),
+                          //       color: Colors.transparent,
+                          //       borderRadius:
+                          //           BorderRadius.circular(200.r),
+                          //     ),
+                          //     width: 110.w,
+                          //     height: 40.w,
+                          //     child: Padding(
+                          //       padding: EdgeInsets.all(8.w),
+                          //       child: Row(
+                          //         children: [
+                          //           Image.asset(
+                          //             width: 25.w,
+                          //             PngAssets.Flag_of_United_States,
+                          //           ),
+                          //           SizedBox(width: 5.w),
+                          //           Text(
+                          //             mainViewModel.getLanguage,
+                          //             style: TextStyle(
+                          //               fontSize: 16.sp,
+                          //               fontWeight: FontWeight.w500,
+                          //               color: AppColors.kTextColor,
+                          //             ),
+                          //           ),
+                          //           Spacer(),
+                          //           Image.asset(PngAssets
+                          //               .keyboard_arrow_down),
+                          //         ],
+                          //       ),
+                          //     ),
+                          //   ),
+                          //   itemBuilder: (context) => [
+                          //     PopupMenuItem(
+                          //       child: Text("English"),
+                          //       onTap: () {
+                          //         mainViewModel.setLanguage("Eng");
+                          //       },
+                          //     ),
+                          //     PopupMenuItem(
+                          //       child: Text("Norwegian"),
+                          //       onTap: () {
+                          //         mainViewModel.setLanguage("Nor");
+                          //       },
+                          //     ),
+                          //   ],
+                          // ),
+                          SizedBox(width: 20.w),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(child: widget.child),
+            ],
+          ),
         ],
       ),
     );
@@ -174,7 +200,7 @@ class _HomescreenState extends State<Homescreen> {
       child: Text(
         title,
         style: TextStyle(
-          color: isSelected ? AppColors.black : AppColors.olive,
+          color: isSelected ? AppColors.white : AppColors.dullwhite,
           fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
           fontSize: 16.sp,
         ),
