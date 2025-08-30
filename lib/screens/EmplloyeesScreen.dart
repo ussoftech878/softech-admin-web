@@ -2,11 +2,46 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:softech_admin/utils/images.dart';
 import 'package:softech_admin/utils/theme.dart';
-import 'package:softech_admin/widgets/booking_header.dart';
-import 'package:softech_admin/widgets/booking_tile.dart';
 
 class Emplloyeesscreen extends StatelessWidget {
-  const Emplloyeesscreen({super.key});
+  final List<Employee> employees = [
+    Employee(
+      id: 'EMP001',
+      name: 'John Doe',
+      email: 'john.doe@softech.com',
+      department: 'IT',
+      role: 'Software Engineer',
+      status: 'Active',
+    ),
+    Employee(
+      id: 'EMP002',
+      name: 'Jane Smith',
+      email: 'jane.smith@softech.com',
+      department: 'HR',
+      role: 'HR Manager',
+      status: 'Active',
+    ),
+    Employee(
+      id: 'EMP003',
+      name: 'John Doe',
+      email: 'john.doe@softech.com',
+      department: 'IT',
+      role: 'Software Engineer',
+      status: 'Active',
+    ),
+
+    Employee(
+      id: 'EMP003',
+      name: 'John Doe',
+      email: 'john.doe@softech.com',
+      department: 'IT',
+      role: 'Software Engineer',
+      status: 'Active',
+    ),
+    // Add more employees as needed
+  ];
+
+  Emplloyeesscreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,53 +67,20 @@ class Emplloyeesscreen extends StatelessWidget {
 
                 child: Column(
                   children: [
-                    const BookingHeader(
-                      text1: 'Booking ID',
-                      text2: 'Car',
-                      text3: 'Plate No',
-                      text4: 'Toll Stations Crossed',
-                      text5: 'Discount Validity',
-                      text6: 'Start Date',
-                      text7: 'Next Payments Date',
-                      text8: '  KM Driven',
-                      text9: 'Avilable KM',
-                    ),
+                    const BookingHeader(),
                     Expanded(
                       child: ListView.builder(
                         shrinkWrap: true,
-                        itemCount: 10,
+                        itemCount: employees.length,
                         itemBuilder: (context, index) {
+                          final employee = employees[index];
                           final bool isEvenRow = index % 2 == 0;
-                          return InkWell(
-                            hoverColor: Colors.transparent,
-                            onTap: () async {
-                              // await Provider.of<BookingViewModel>(
-                              //         context,
-                              //         listen: false)
-                              //     .BookingDetail(
-                              //         bookingID:
-                              //             booking.bookingId!.toInt())
-                              //     .then((value) {
-                              //   if (value) {
-                              //     context.go(
-                              //         '/booking/details/${booking.bookingId}');
-                              //     //   context, bookingDetailsRoute);
-                              //   } else {
-                              //     EasyLoading.showError(
-                              //         "Something went wrong");
-                              //   }
-                              // });
-                            },
-                            child: BookingTile(
-                              color: isEvenRow
-                                  ? AppColors.white
-                                  : AppColors.teal,
-                              icon: Icon(
-                                Icons.more_vert,
-                                size: 24.w,
-                                color: AppColors.black,
-                              ),
-                            ),
+                          return BookingTile(
+                            color: isEvenRow ? AppColors.white : AppColors.teal,
+                            textColor: isEvenRow
+                                ? AppColors.black
+                                : AppColors.white,
+                            employee: employee,
                           );
                         },
                       ),
@@ -87,28 +89,235 @@ class Emplloyeesscreen extends StatelessWidget {
                 ),
               ),
             ),
-            // Align(
-            //   alignment: Alignment.center,
-            //   child: Consumer<BookingViewModel>(
-            //     builder: (context, bookingViewModel, child) {
-            //       final totalPages = bookingViewModel.getTotalPages(
-            //         bookingViewModel.getMyBookingResponse.totalRecords ?? 0,
-            //       );
-            //       return totalPages > 1
-            //           ? NumberPaginator(
-            //               numberPages: totalPages,
-            //               onPageChange: (index) {
-            //                 bookingViewModel.goToPage(index + 1);
-            //               },
-            //               initialPage: bookingViewModel.page - 1,
-            //             )
-            //           : SizedBox.shrink();
-            //     },
-            //   ),
-            // ),
           ],
         ),
       ),
     );
   }
+}
+
+class BookingHeader extends StatelessWidget {
+  const BookingHeader({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.w),
+      decoration: BoxDecoration(
+        color: AppColors.teal,
+        borderRadius: BorderRadius.circular(10.r),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          // Conditionally render date column
+          SizedBox(
+            width: 150.w,
+            child: Text(
+              'Employee ID',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w500,
+                fontSize: 14.sp,
+              ),
+            ),
+          ),
+          SizedBox(width: 3.w),
+          SizedBox(
+            width: 150.w,
+            child: Text(
+              'Name',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w500,
+                fontSize: 14.sp,
+              ),
+            ),
+          ),
+          SizedBox(width: 3.w),
+          SizedBox(
+            width: 150.w,
+            child: Text(
+              'Email',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w500,
+                fontSize: 14.sp,
+              ),
+            ),
+          ),
+          SizedBox(width: 3.w),
+          SizedBox(
+            width: 150.w,
+            child: Text(
+              'Department',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w500,
+                fontSize: 14.sp,
+              ),
+            ),
+          ),
+          SizedBox(width: 3.w),
+          SizedBox(
+            width: 150.w,
+            child: Text(
+              'Role',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w500,
+                fontSize: 14.sp,
+              ),
+            ),
+          ),
+          SizedBox(width: 3.w),
+          SizedBox(
+            width: 150.w,
+            child: Text(
+              'Status',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w500,
+                fontSize: 14.sp,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class BookingTile extends StatelessWidget {
+  final Color color;
+  final Color textColor;
+  final Employee employee;
+
+  const BookingTile({
+    super.key,
+    required this.color,
+    required this.employee,
+    required this.textColor,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 10.w),
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10.r),
+        color: color,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          SizedBox(
+            width: 150.w,
+            child: Text(
+              employee.id,
+              style: TextStyle(
+                overflow: TextOverflow.ellipsis,
+                color: textColor,
+                fontWeight: FontWeight.w500,
+                fontSize: 14.sp,
+              ),
+            ),
+          ),
+          SizedBox(width: 3.w),
+          SizedBox(
+            width: 150.w,
+            child: Text(
+              employee.name,
+              style: TextStyle(
+                overflow: TextOverflow.ellipsis,
+                color: textColor,
+                fontWeight: FontWeight.w500,
+                fontSize: 14.sp,
+              ),
+            ),
+          ),
+          SizedBox(width: 3.w),
+          SizedBox(
+            width: 150.w,
+            child: Text(
+              employee.email,
+              style: TextStyle(
+                overflow: TextOverflow.ellipsis,
+                color: textColor,
+                fontWeight: FontWeight.w500,
+                fontSize: 14.sp,
+              ),
+            ),
+          ),
+          SizedBox(width: 3.w),
+          SizedBox(
+            width: 150.w,
+            child: Text(
+              employee.department,
+              style: TextStyle(
+                overflow: TextOverflow.ellipsis,
+                color: textColor,
+                fontWeight: FontWeight.w500,
+                fontSize: 14.sp,
+              ),
+            ),
+          ),
+          SizedBox(width: 3.w),
+          SizedBox(
+            width: 150.w,
+            child: Text(
+              employee.role,
+              style: TextStyle(
+                overflow: TextOverflow.ellipsis,
+                color: textColor,
+                fontWeight: FontWeight.w500,
+                fontSize: 14.sp,
+              ),
+            ),
+          ),
+          SizedBox(width: 3.w),
+          Container(
+            width: 150.w,
+            padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 10.w),
+            decoration: BoxDecoration(
+              color: employee.status == 'Active'
+                  ? textColor == AppColors.black
+                        ? Colors.green.withOpacity(0.1)
+                        : Colors.white.withOpacity(0.1)
+                  : Colors.red.withOpacity(0.1),
+              borderRadius: BorderRadius.circular(5.r),
+            ),
+            child: Text(
+              employee.status,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: employee.status == 'Active' ? textColor : Colors.red,
+                fontWeight: FontWeight.w500,
+                fontSize: 14.sp,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Employee {
+  final String id;
+  final String name;
+  final String email;
+  final String department;
+  final String role;
+  final String status;
+
+  Employee({
+    required this.id,
+    required this.name,
+    required this.email,
+    required this.department,
+    required this.role,
+    required this.status,
+  });
 }

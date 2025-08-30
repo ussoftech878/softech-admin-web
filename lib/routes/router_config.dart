@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:softech_admin/screens/AttendanceScreen.dart';
 import 'package:softech_admin/screens/EmplloyeesScreen.dart';
 import 'package:softech_admin/screens/HomeScreen.dart';
 import 'package:softech_admin/screens/NotFoundScreen.dart';
@@ -35,7 +36,7 @@ CustomTransitionPage buildPageWithoutTransition({
 
 const String homeRoute = '/';
 const String EmployeeRoute = '/employee';
-const String notFoundRoute = '/not_found';
+const String AttendanceRoute = '/attendance';
 const String privacyPolicyRoute = '/privacy-policy';
 const String termsAndConditionsRoute = '/terms-and-conditions';
 const String viewAllRoute = '/cars';
@@ -58,7 +59,11 @@ final router = GoRouter(
         ),
         GoRoute(
           path: EmployeeRoute,
-          builder: (context, state) => const Emplloyeesscreen(),
+          builder: (context, state) => Emplloyeesscreen(),
+        ),
+        GoRoute(
+          path: AttendanceRoute,
+          builder: (context, state) => AttendancePage(),
         ),
       ],
     ),
