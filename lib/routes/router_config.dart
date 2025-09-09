@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:softech_admin/screens/AttendanceScreen.dart';
 import 'package:softech_admin/screens/EmplloyeesScreen.dart';
 import 'package:softech_admin/screens/HomeScreen.dart';
+import 'package:softech_admin/screens/ManagementScreen.dart';
 import 'package:softech_admin/screens/NotFoundScreen.dart';
 
 // User Dashboard Routes
@@ -37,6 +38,7 @@ CustomTransitionPage buildPageWithoutTransition({
 const String homeRoute = '/';
 const String EmployeeRoute = '/employee';
 const String AttendanceRoute = '/attendance';
+const String ManagementRoute = '/management';
 const String privacyPolicyRoute = '/privacy-policy';
 const String termsAndConditionsRoute = '/terms-and-conditions';
 const String viewAllRoute = '/cars';
@@ -64,6 +66,10 @@ final router = GoRouter(
         GoRoute(
           path: AttendanceRoute,
           builder: (context, state) => AttendancePage(),
+        ),
+        GoRoute(
+          path: ManagementRoute,
+          builder: (context, state) => Managementscreen(),
         ),
       ],
     ),

@@ -6,11 +6,11 @@ import 'package:softech_admin/widgets/gradient_button.dart';
 
 void showAddEmployeeDialogBox(BuildContext context) {
   showDialog(
-      barrierColor: Color.fromRGBO(1, 89, 121, 0.50),
-      context: context,
-      builder: (BuildContext context) {
-        return Dialog(
-            child: SingleChildScrollView(
+    barrierColor: Color.fromRGBO(1, 89, 121, 0.50),
+    context: context,
+    builder: (BuildContext context) {
+      return Dialog(
+        child: SingleChildScrollView(
           child: ConstrainedBox(
             constraints: BoxConstraints(maxWidth: 675.w),
             child: Padding(
@@ -21,34 +21,29 @@ void showAddEmployeeDialogBox(BuildContext context) {
                   Text(
                     'Add Employee',
                     style: TextStyle(
-                        color: AppColors.black,
-                        fontSize: 24,
-                        fontWeight: FontWeight.w600),
+                      color: AppColors.black,
+                      fontSize: 24,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
-                  SizedBox(
-                    height: 20.w,
-                  ),
+                  SizedBox(height: 20.w),
                   TextField(
                     decoration: InputDecoration(
                       hintText: 'Name',
                       hintStyle: TextStyle(
                         fontSize: 16.sp,
                         color: Color(0xffA6A6A6),
-                      )
-                     
+                      ),
                     ),
                   ),
-                  SizedBox(
-                    height: 10.w,
-                  ),
+                  SizedBox(height: 10.w),
                   TextField(
                     decoration: InputDecoration(
                       hintText: 'Employee ID',
                       hintStyle: TextStyle(
                         fontSize: 16.sp,
                         color: Color(0xffA6A6A6),
-                      )
-                     
+                      ),
                     ),
                   ),
                   TextField(
@@ -57,65 +52,102 @@ void showAddEmployeeDialogBox(BuildContext context) {
                       hintStyle: TextStyle(
                         fontSize: 16.sp,
                         color: Color(0xffA6A6A6),
-                      )
-                     
+                      ),
                     ),
                   ),
-                  SizedBox(
-                    height: 10.w,
-                  ),
+                  SizedBox(height: 10.w),
                   TextField(
                     decoration: InputDecoration(
                       hintText: 'department',
                       hintStyle: TextStyle(
                         fontSize: 16.sp,
                         color: Color(0xffA6A6A6),
-                      )
-                     
+                      ),
                     ),
                   ),
-                  SizedBox(
-                    height: 10.w,
-                  ),
+                  SizedBox(height: 10.w),
                   TextField(
                     decoration: InputDecoration(
                       hintText: 'role',
                       hintStyle: TextStyle(
                         fontSize: 16.sp,
                         color: Color(0xffA6A6A6),
-                      )
-                     
+                      ),
                     ),
                   ),
-                  SizedBox(
-                    height: 10.w,
-                  ),
-                  SizedBox(
-                    height: 20.w,
-                  ),
+                  SizedBox(height: 10.w),
+                  SizedBox(height: 20.w),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SizedBox(
-                          height: 52.w,
-                          width: 122.w,
-                          child: CustomOutlineButton(
-                              text: 'Cancel', onPressed: () {
+                        height: 52.w,
+                        width: 122.w,
+                        child: CustomOutlineButton(
+                          text: 'Cancel',
+                          onPressed: () {
                             Navigator.pop(context);
-                              })),
+                          },
+                        ),
+                      ),
                       SizedBox(
-                          height: 50.w,
-                          width: 150.w,
-                          child: GradientButton(text: 'Add', onPressed: () {
+                        height: 50.w,
+                        width: 150.w,
+                        child: GradientButton(
+                          text: 'Add',
+                          onPressed: () {
                             Navigator.pop(context);
-                          }))
+                          },
+                        ),
+                      ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
           ),
-        ));
-      });
+        ),
+      );
+    },
+  );
 }
 
+void showNotificationDialogBox(BuildContext context) {
+  showDialog(
+    barrierColor: Color.fromRGBO(1, 89, 121, 0.50),
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text('Notifications'),
+        content: Container(
+          width: 300.w,
+          child: ListView(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            children: [
+              ListTile(
+                title: Text('New notification 1'),
+                subtitle: Text('Notification details here'),
+                leading: Icon(Icons.notifications),
+              ),
+              ListTile(
+                title: Text('New notification 2'),
+                subtitle: Text('Notification details here'),
+                leading: Icon(Icons.notifications),
+              ),
+              // Add more notifications as needed
+            ],
+          ),
+        ),
+        actions: [
+          GradientButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            text: 'Close',
+          ),
+        ],
+      );
+    },
+  );
+}

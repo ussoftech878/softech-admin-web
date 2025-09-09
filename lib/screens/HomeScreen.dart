@@ -5,6 +5,8 @@ import 'package:go_router/go_router.dart';
 import 'package:softech_admin/routes/router_config.dart';
 import 'package:softech_admin/utils/images.dart';
 import 'package:softech_admin/utils/theme.dart';
+import 'package:softech_admin/widgets/showdialogbox.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key, required this.child});
@@ -16,8 +18,19 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
+  // Move _launchURL outside of build method
+  Future<void> _launchURL(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
+    } else {
+      throw Exception('Could not launch $url');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    // Remove _launchURL from here
     return Scaffold(
       body: Stack(
         children: [
@@ -59,8 +72,17 @@ class _HomescreenState extends State<Homescreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     InkWell(
-                      onTap: () {
-                        //context.replace(homeRoute);
+                      onTap: () async {
+                        try {
+                          await _launchURL('https://softecint.com/');
+                        } catch (e) {
+                          // Show error if URL fails to launch
+                          if (mounted) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text('Could not open website')),
+                            );
+                          }
+                        }
                       },
                       child: Image.asset(PngAssests.logo, width: 160.w),
                     ),
@@ -72,6 +94,8 @@ class _HomescreenState extends State<Homescreen> {
                           SizedBox(width: 30.w),
                           _buildNavItem(context, 'attendance', AttendanceRoute),
                           SizedBox(width: 30.w),
+                          _buildNavItem(context, 'Management', ManagementRoute),
+                          SizedBox(width: 30.w),
                         ],
                       ),
                     ),
@@ -79,94 +103,17 @@ class _HomescreenState extends State<Homescreen> {
                       padding: EdgeInsets.only(right: 40.w),
                       child: Row(
                         children: [
-                          /* InkWell(
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                border: Border.all(
-                                                    color: Color(0xFFD1D5DB)),
-                                                color: Colors.transparent,
-                                                borderRadius:
-                                                    BorderRadius.circular(200.r),
-                                              ),
-                                              width: 110.w,
-                                              height: 40.w,
-                                              child: Padding(
-                                                padding: EdgeInsets.all(8.w),
-                                                child: Row(
-                                                  children: [
-                                                    Image.asset(
-                                                      width: 25.w,
-                                                      PngAssets.Flag_of_United_States,
-                                                    ),
-                                                    SizedBox(width: 5.w),
-                                                    Text(
-                                                      "Eng",
-                                                      style: TextStyle(
-                                                        fontSize: 16.sp,
-                                                        fontWeight: FontWeight.w500,
-                                                        color: AppColors.kTextColor,
-                                                      ),
-                                                    ),
-                                                    Spacer(),
-                                                    Image.asset(PngAssets
-                                                        .keyboard_arrow_down),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ), */
                           SizedBox(width: 20.w),
-                          // PopupMenuButton(
-                          //   child: Container(
-                          //     decoration: BoxDecoration(
-                          //       border: Border.all(
-                          //           color: Color(0xFFD1D5DB)),
-                          //       color: Colors.transparent,
-                          //       borderRadius:
-                          //           BorderRadius.circular(200.r),
-                          //     ),
-                          //     width: 110.w,
-                          //     height: 40.w,
-                          //     child: Padding(
-                          //       padding: EdgeInsets.all(8.w),
-                          //       child: Row(
-                          //         children: [
-                          //           Image.asset(
-                          //             width: 25.w,
-                          //             PngAssets.Flag_of_United_States,
-                          //           ),
-                          //           SizedBox(width: 5.w),
-                          //           Text(
-                          //             mainViewModel.getLanguage,
-                          //             style: TextStyle(
-                          //               fontSize: 16.sp,
-                          //               fontWeight: FontWeight.w500,
-                          //               color: AppColors.kTextColor,
-                          //             ),
-                          //           ),
-                          //           Spacer(),
-                          //           Image.asset(PngAssets
-                          //               .keyboard_arrow_down),
-                          //         ],
-                          //       ),
-                          //     ),
-                          //   ),
-                          //   itemBuilder: (context) => [
-                          //     PopupMenuItem(
-                          //       child: Text("English"),
-                          //       onTap: () {
-                          //         mainViewModel.setLanguage("Eng");
-                          //       },
-                          //     ),
-                          //     PopupMenuItem(
-                          //       child: Text("Norwegian"),
-                          //       onTap: () {
-                          //         mainViewModel.setLanguage("Nor");
-                          //       },
-                          //     ),
-                          //   ],
-                          // ),
-                          SizedBox(width: 20.w),
+                          IconButton(
+                            onPressed: () {
+                              showNotificationDialogBox(context);
+                            },
+                            icon: Icon(
+                              Icons.notifications,
+                              color: AppColors.white,
+                              size: 30.sp,
+                            ),
+                          ),
                         ],
                       ),
                     ),
