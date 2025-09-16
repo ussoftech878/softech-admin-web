@@ -87,7 +87,7 @@ class _HomescreenState extends State<Homescreen> {
                       child: Image.asset(PngAssests.logo, width: 160.w),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(right: 108.w),
+                      padding: EdgeInsets.only(right: 40.w),
                       child: Row(
                         children: [
                           _buildNavItem(context, "Employees", EmployeeRoute),
@@ -113,7 +113,11 @@ class _HomescreenState extends State<Homescreen> {
                               color: AppColors.white,
                               size: 30.sp,
                             ),
-                          ),
+                          ),SizedBox(width: 20.w),
+                          IconButton(onPressed: (){
+                            _handleNavigation(context, profileRoute);
+                          }, icon: Icon(Icons.person,color: AppColors.white,
+                              size: 30.sp,))
                         ],
                       ),
                     ),

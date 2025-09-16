@@ -5,6 +5,7 @@ import 'package:softech_admin/screens/EmplloyeesScreen.dart';
 import 'package:softech_admin/screens/HomeScreen.dart';
 import 'package:softech_admin/screens/ManagementScreen.dart';
 import 'package:softech_admin/screens/NotFoundScreen.dart';
+import 'package:softech_admin/screens/ProfileScreen.dart';
 
 // User Dashboard Routes
 const String signUpRoute = '/signUp';
@@ -70,6 +71,10 @@ final router = GoRouter(
         GoRoute(
           path: ManagementRoute,
           builder: (context, state) => Managementscreen(),
+        ),
+        GoRoute(
+          path: profileRoute,
+          builder: (context, state) => Profilescreen(),
         ),
       ],
     ),
