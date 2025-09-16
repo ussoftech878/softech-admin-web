@@ -1,0 +1,143 @@
+2025-09-05 06:45:10.213: [INFO] VisibilityChanged: 0
+2025-09-05 06:45:10.289: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2025-09-05 06:45:10.292: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2025-09-05 06:45:10.295: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2025-09-05 06:45:10.298: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2025-09-05 06:45:10.302: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2025-09-05 06:45:10.306: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2025-09-05 06:45:10.310: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2025-09-05 06:45:10.312: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2025-09-05 06:45:10.315: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2025-09-05 06:45:10.318: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2025-09-05 06:45:10.321: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2025-09-05 06:45:10.338: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2025-09-05 06:45:10.338: [INFO] OnDoneLoading sync enabled: 0
+2025-09-05 06:45:10.463: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2025-09-05 06:45:13.003: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 3
+2025-09-05 06:45:13.006: [INFO] Primary account changed.
+2025-09-05 06:45:13.006: [INFO] OnPrimaryAccountChanged PrimaryAccountChangeEvent::Type::kSet
+2025-09-05 06:45:13.013: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 3
+2025-09-05 06:45:18.977: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.977: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.978: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.978: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.978: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.979: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.979: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.979: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.980: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.980: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.980: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.981: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.981: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.981: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.982: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.982: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.982: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.983: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.983: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.983: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.984: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.984: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.984: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.985: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.985: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.985: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.986: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.986: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.987: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.987: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.987: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.988: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.988: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.988: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.989: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.989: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.990: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.990: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.990: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.991: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.991: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.991: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.992: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.992: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.992: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.992: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.993: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.993: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.993: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.993: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.994: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.994: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.994: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.995: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.995: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.995: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.995: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.996: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.996: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.996: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.997: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.997: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.997: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.997: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.998: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.998: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.998: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.999: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.999: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.999: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.999: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:18.999: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.000: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.000: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.000: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.001: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.001: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.001: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.001: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.002: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.002: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.002: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.003: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.003: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.004: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.004: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.004: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.005: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.005: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.005: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.006: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.006: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.006: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.007: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.007: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.007: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.008: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.008: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.008: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.008: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.008: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.009: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.009: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.009: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.009: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.009: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.010: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.010: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.010: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.011: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.011: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.011: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.011: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.012: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.012: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.012: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.012: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.013: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:19.013: [INFO] BookmarkNodeAdded, ABU: 0
+2025-09-05 06:45:24.081: [INFO] Sync initialization duration: 10682ms
+2025-09-05 06:51:52.715: [INFO] VisibilityChanged: 0
+2025-09-05 06:51:52.827: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2025-09-05 06:51:52.827: [INFO] OnDoneLoading sync enabled: 1
+2025-09-05 06:52:04.188: [INFO] Sync initialization duration: 1975ms
