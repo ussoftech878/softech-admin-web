@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
 
 class Profilescreen extends StatelessWidget {
   const Profilescreen({super.key});
@@ -23,12 +25,24 @@ class Profilescreen extends StatelessWidget {
             Center(
               child: Column(
                 children: [
-                  SizedBox(
-                    height: 400.h,
-                    width: 400.w,
-                    child: CircleAvatar(
-                      radius: 60.r,
-                      backgroundImage: const AssetImage('assets/profile.png'),
+                  MouseRegion(
+                    child: Stack(
+                      children: [
+                        SizedBox(
+                          height: 400.h,
+                          width: 400.w,
+                          child: CircleAvatar(
+                            
+                            radius: 60.r,
+                            backgroundImage: const AssetImage('assets/profile.png'),
+                          ),
+                        ),
+                        Positioned.fill(
+                          child: HoverEditButton(
+                            onTap: _pickImage,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   SizedBox(height: 20.h),
@@ -155,5 +169,68 @@ class ProfileInfoItem extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class HoverEditButton extends StatefulWidget {
+  final VoidCallback onTap;
+
+  const HoverEditButton({
+    Key? key,
+    required this.onTap,
+  }) : super(key: key);
+
+  @override
+  State<HoverEditButton> createState() => _HoverEditButtonState();
+}
+
+class _HoverEditButtonState extends State<HoverEditButton> {
+  bool isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) => setState(() => isHovered = true),
+      onExit: (_) => setState(() => isHovered = false),
+      child: GestureDetector(
+        onTap: widget.onTap,
+        child: AnimatedOpacity(
+          duration: const Duration(milliseconds: 200),
+          opacity: isHovered ? 1.0 : 0.0,
+          child: Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.black.withOpacity(0.5),
+            ),
+            child: Center(
+              child: Icon(
+                Icons.edit,
+                color: Colors.white,
+                size: 24.sp,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+Future<void> _pickImage() async {
+  final ImagePicker picker = ImagePicker();
+  
+  try {
+    final XFile? image = await picker.pickImage(
+      source: ImageSource.gallery,
+      imageQuality: 80,
+    );
+    
+    if (image != null) {
+      // Handle the selected image
+      print('Image path: ${image.path}');
+      // You can update your UI with the new image here
+    }
+  } catch (e) {
+    print('Error picking image: $e');
   }
 }
