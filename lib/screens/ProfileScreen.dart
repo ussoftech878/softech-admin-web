@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
+
+import 'package:softech_admin/routes/router_config.dart';
 
 class Profilescreen extends StatelessWidget {
   const Profilescreen({super.key});
@@ -34,7 +37,7 @@ class Profilescreen extends StatelessWidget {
                           child: CircleAvatar(
                             
                             radius: 60.r,
-                            backgroundImage: const AssetImage('assets/profile.png'),
+                           
                           ),
                         ),
                         Positioned.fill(
@@ -60,6 +63,18 @@ class Profilescreen extends StatelessWidget {
                       color: Colors.grey,
                     ),
                   ),
+                  SizedBox(height: 20.h),
+                  TextButton(onPressed: (){
+                    context.go(loginRoute);
+                  }, child: Text(
+                    "logout",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17.sp,
+                      color: Colors.red,
+                    ),
+                  ))
+                  
                 ],
               ),
             ),

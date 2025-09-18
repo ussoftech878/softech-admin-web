@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:softech_admin/routes/router_config.dart';
 import 'package:softech_admin/utils/theme.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:softech_admin/view_model/Auth_viewmodel.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (_) => AuthViewmodel()),
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

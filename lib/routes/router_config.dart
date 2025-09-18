@@ -6,6 +6,7 @@ import 'package:softech_admin/screens/HomeScreen.dart';
 import 'package:softech_admin/screens/ManagementScreen.dart';
 import 'package:softech_admin/screens/NotFoundScreen.dart';
 import 'package:softech_admin/screens/ProfileScreen.dart';
+import 'package:softech_admin/screens/loginScreen.dart';
 
 // User Dashboard Routes
 const String signUpRoute = '/signUp';
@@ -49,7 +50,7 @@ const String transactionDetailRoute = '/transactionDetail';
 // Router configuration
 final router = GoRouter(
   navigatorKey: rootNavigatorKey,
-  initialLocation: homeRoute,
+  initialLocation: loginRoute,
   errorBuilder: (context, state) => const NotFoundScreen(),
   routes: [
     ShellRoute(
@@ -78,5 +79,8 @@ final router = GoRouter(
         ),
       ],
     ),
+    GoRoute(path:   loginRoute,
+        builder: (context, state) => const Loginscreen(),
+        ),
   ],
 );
